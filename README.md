@@ -1,6 +1,6 @@
 # Script Kitty AGI
 
-A modular, production-grade, multi-agent orchestration platform for advanced AI workflows.
+# WORK IN PROGRESS 
 
 ## Project Structure
 
