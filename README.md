@@ -29,7 +29,7 @@
 4. **Run tests:**
    - `make test` or run pytest in each service
 
-## Best Practices
+## Current Implementation 
 - All cross-service messages use shared protobufs in `shared/proto/`
 - Each service has its own `requirements.txt`, `Dockerfile`, and `tests/`
 - Observability: Prometheus metrics and OpenTelemetry tracing in every service
@@ -47,7 +47,6 @@ The Helm chart context is now strictly limited to only the following files:
 
 All service source code, build artifacts (e.g., `dist/`, `node_modules/`), and dependencies are excluded from the chart package via `.helmignore`. This ensures the chart remains small and deployable, and avoids file size errors during `helm upgrade/install`.
 
-To update the chart context, simply edit `.helmignore` as needed.
 
 ## Generating TypeScript Types from Protobufs (Frontend)
 
@@ -59,10 +58,6 @@ To ensure strict type safety and contract enforcement between backend and fronte
    - Run `npm run gen:proto` from the `frontend/` directory (Windows/PowerShell)
    - Or run `npm run gen:proto:sh` (Linux/macOS)
    - This will generate TypeScript files in `frontend/src/shared/proto/` for all proto files in `shared/proto/`.
-3. **Usage:**
-   - Import generated types in your frontend code for strict type safety and to match backend contracts.
-
-> **Note:** If you add or change proto files, always regenerate the TypeScript types before building or running the frontend.
 
 ## Contributing
 - See `docs/architecture/` for design and implementation details
